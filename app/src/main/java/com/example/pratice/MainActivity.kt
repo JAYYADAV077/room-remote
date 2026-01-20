@@ -44,18 +44,13 @@ import com.example.pratice.presentation.JokeScreen
 import com.example.pratice.presentation.JokesViewModel
 import com.example.pratice.ui.theme.PraticeTheme
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.nio.file.WatchEvent
 
 class MainActivity : ComponentActivity() {
+    private val viewModel: JokesViewModel by viewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val db = DatabaseProvider.getDatabase(this)
-        val repository = JokesRepository(
-            api = RetrofitInstance.api,
-            dao = db.getDao()
-        )
-        val viewModel = JokesViewModel(repository)
         enableEdgeToEdge()
         setContent {
             PraticeTheme {

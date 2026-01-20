@@ -71,4 +71,7 @@ dependencies {
     // Use kapt here (matches the plugin above)
     kapt(libs.room.compiler)
 
+
+    implementation("io.insert-koin:koin-android:3.5.3")
+
 }

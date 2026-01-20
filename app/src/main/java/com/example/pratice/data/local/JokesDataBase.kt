@@ -11,4 +11,5 @@ import androidx.room.RoomDatabase
 abstract class JokesDataBase: RoomDatabase() {
 
     abstract fun getDao(): JokesDao
+
 }
